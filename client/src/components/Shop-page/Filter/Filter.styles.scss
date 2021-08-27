@@ -1,0 +1,186 @@
+.shop-page .filter {
+  width: 300px;
+
+  .overlay-for-toggle {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #00000077;
+    z-index: 9;
+  }
+
+  .filter-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 99;
+    background-color: #fcfcfc;
+    padding: 1rem 1.4rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    .menu-title {
+      display: flex;
+      align-items: center;
+      flex-basis: 40%;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+
+      .filter-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 17px;
+        background-color: transparent;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        padding: 3px 15px;
+        cursor: pointer;
+        border-radius: 2.5px;
+
+        .filter-icon {
+          font-size: 1.5rem;
+        }
+
+        &:hover {
+          color: white;
+          background-color: #458ce9;
+        }
+      }
+
+      .filter-clean {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+        color: rgb(95, 95, 95);
+      }
+    }
+
+    .filter-item {
+      margin-bottom: 1.5rem;
+
+      .title {
+        border-bottom: 1px solid black;
+        h1 {
+          font-size: 22px;
+          font-weight: 600;
+          position: relative;
+          padding-bottom: 10px;
+          display: inline-block;
+
+          &:before {
+            content: '';
+            display: block;
+            background-color: black;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            bottom: -1.5px;
+            border-radius: 10px;
+          }
+        }
+      }
+
+      input[type='checkbox'],
+      input[type='radio'] {
+        width: auto;
+        opacity: 0.00000001;
+        position: absolute;
+        left: 0;
+        margin-left: -20px;
+      }
+
+      label {
+        cursor: pointer;
+        font-size: 18px;
+        margin-left: 5px;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        span {
+          margin-left: 5px;
+        }
+      }
+
+      input[type='checkbox'] + label:before,
+      input[type='radio'] + label:before {
+        content: '\00a0';
+        border: 1px solid #333;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0.3em 0 0;
+        width: 20px;
+        height: 20px;
+        margin-top: 1.2rem;
+        border-radius: 3px;
+      }
+
+      input[type='checkbox']:checked + label:before,
+      input[type='radio']:checked + label:before {
+        content: '\2713';
+        background: var(--black-color);
+        color: #fff;
+        font-size: auto;
+      }
+
+      input[type='checkbox']:checked + label span,
+      input[type='radio']:checked + label span {
+        font-size: 19px;
+      }
+
+      ul li {
+        list-style: none;
+        padding-bottom: 10px;
+        font-size: 18px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      ul,
+      input {
+        margin-top: 1rem;
+      }
+
+      ul li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    display: block !important;
+
+    .filter-wrapper {
+      // position: unset;
+      padding: 0;
+      margin-top: 1.5rem;
+      width: 250px;
+      background-color: transparent;
+      height: auto;
+      position: sticky;
+      top: 2rem;
+
+      .menu-title {
+        display: none;
+      }
+
+      input[type='checkbox']:hover + label:before {
+        background-color: var(--black-color);
+      }
+    }
+  }
+}

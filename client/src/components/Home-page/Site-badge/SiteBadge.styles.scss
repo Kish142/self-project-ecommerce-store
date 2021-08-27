@@ -1,0 +1,49 @@
+.badge-section {
+  .slick-slide:not(:last-child) {
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+
+  .slick-dots {
+    bottom: -10px;
+  }
+
+  .badge-item {
+    text-align: center;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1.5rem;
+    padding: 2rem 1.5rem;
+    height: 220px;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+
+    .icon {
+      font-size: 3rem;
+    }
+
+    .content {
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .text {
+        margin-top: 10px;
+        color: rgb(53, 53, 53);
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+  }
+}

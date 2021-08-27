@@ -1,0 +1,157 @@
+.banner-lg {
+  margin-bottom: 3rem;
+
+  .banner-lg-wrapper {
+    margin-top: 4rem;
+
+    .banner {
+      position: relative;
+      margin-bottom: 0.5rem;
+
+      .img {
+        width: 100%;
+        height: 300px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content {
+        width: 300px;
+        margin-left: 2rem;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        z-index: 9;
+        margin: 0 1rem 0 inherit;
+
+        .heading {
+          font-size: 30px;
+          line-height: 1.2;
+        }
+
+        .text {
+          font-size: 15px;
+          margin-top: 15px;
+          line-height: 1.7;
+        }
+
+        .cta {
+          background-color: #0074f4;
+          color: white;
+          outline: none;
+          border: none;
+          padding: 10px 25px;
+          margin-top: 25px;
+          border-radius: 3px;
+          font-size: 18px;
+          cursor: pointer;
+        }
+      }
+
+      .banner-1 {
+        color: white;
+      }
+
+      .banner-1 {
+        .cta:hover {
+          background-color: #1f8bff;
+        }
+      }
+
+      .banner-2 {
+        .cta {
+          border: 1px solid var(--black-color);
+          background-color: transparent;
+          color: var(--black-color);
+
+          &:hover {
+            background-color: var(--black-color);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .banner-lg-wrapper .banner .content {
+      left: 4rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+
+    .banner-lg-wrapper {
+      display: flex;
+      gap: 1rem;
+
+      .banner .content {
+        left: 0;
+        max-width: 270px;
+
+        .heading {
+          font-size: 24px;
+          line-height: 1.3;
+        }
+
+        .text {
+          font-size: 15px;
+          line-height: 1.4;
+        }
+
+        .cta {
+          padding: 10px 25px;
+          font-size: 15px;
+        }
+      }
+
+      .banner .img {
+        height: 300px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+
+    .banner-lg-wrapper {
+      display: flex;
+      gap: 1rem;
+
+      .banner .content {
+        left: 1rem;
+        max-width: 350px;
+
+        .heading {
+          font-size: 28px;
+          line-height: 1.4;
+        }
+
+        .text {
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        .cta {
+          padding: 10px 25px;
+          font-size: 17px;
+        }
+      }
+
+      .banner .img {
+        height: 350px;
+      }
+    }
+  }
+}

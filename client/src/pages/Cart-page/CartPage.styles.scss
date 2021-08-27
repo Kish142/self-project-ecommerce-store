@@ -1,0 +1,45 @@
+.cart-page {
+  margin-top: 1rem;
+  .page-title {
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    font-size: 23px;
+    color: var(--black-color);
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    .cart-items-total {
+      display: flex;
+      //   justify-content: space-between;
+      width: 100%;
+      gap: 1rem;
+
+      .cart-items {
+        flex-basis: 65%;
+      }
+
+      .cart-total {
+        position: sticky;
+        top: 2rem;
+        height: 100%;
+        flex-basis: 35%;
+        margin-top: 1rem;
+      }
+    }
+
+    .page-title {
+      max-width: 1200px;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 1.5rem;
+    }
+  }
+}

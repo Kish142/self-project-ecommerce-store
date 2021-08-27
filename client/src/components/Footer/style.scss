@@ -1,0 +1,9 @@
+.footer footer .footer-wrapper {
+  margin: 0 1.5rem;
+
+  @media screen and (min-width: 648px) {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+  }
+}

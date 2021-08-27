@@ -1,0 +1,57 @@
+.product-list .delete-product-modal {
+  .overlay-for-toggle {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0000002d;
+    // background-color: #00000007;
+    z-index: 99;
+  }
+
+  .delete-product-modal-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: auto;
+    margin: 0 auto;
+    height: auto;
+    padding: 2rem 1rem;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    overflow-y: auto;
+
+    .delete-cancel-btn {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 1.5rem;
+
+      button {
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        width: 100px;
+        height: 35px;
+        font-size: 17px;
+        cursor: pointer;
+      }
+
+      .confirm-delete-btn {
+          background-color: var(--danger);
+          color: white;
+
+          &:hover {
+              background-color: #f5453e;
+          }
+      }
+
+      .cancel-delete-btn {
+        border: 1px solid gray;
+      }
+    }
+  }
+}

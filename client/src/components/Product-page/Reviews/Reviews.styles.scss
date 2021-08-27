@@ -1,0 +1,183 @@
+.product-page .reviews-ratings {
+  margin: 0 1rem;
+
+  .reviews-wrapper {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+
+    .rating {
+      .average-rating {
+        .col-1 {
+          gap: 10px;
+          margin-bottom: 20px;
+
+          .average-number {
+            font-size: 60px;
+            color: #2b88a5;
+            font-weight: bold;
+          }
+        }
+
+        .content {
+          .text {
+            font-size: 17px;
+            color: #424242;
+          }
+
+          .stars {
+            margin: 5px 0;
+            font-size: 20px;
+            color: #ffa41c;
+          }
+
+          .rating-count {
+            font-size: 15px;
+            color: #424242;
+          }
+        }
+      }
+
+      .rating-percentage {
+        .percentage {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 5px;
+
+          .star-ratings {
+            font-size: 17px;
+          }
+
+          .percentage-text {
+            font-size: 16px;
+            color: #686868;
+          }
+
+          .a-meter {
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px #e3e6e6;
+            background-color: #f0f2f2;
+            height: 10px;
+            width: 150px;
+            border-radius: 25px;
+            -webkit-border-radius: 25px;
+            -moz-border-radius: 25px;
+            -ms-border-radius: 25px;
+            -o-border-radius: 25px;
+
+            .a-meter-bar {
+              border-radius: 25px;
+              transition: width 0.5s ease;
+              float: left;
+              font-size: 0;
+              height: 100%;
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 4px;
+              box-shadow: inset -2px 0 0 -1px #f5961d, inset 0 0 0 1px #de7921;
+              background-color: #ffa41c;
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+              -webkit-border-radius: 25px;
+              -moz-border-radius: 25px;
+              -ms-border-radius: 25px;
+              -o-border-radius: 25px;
+            }
+          }
+        }
+      }
+
+      .add-review {
+        margin-top: 2rem;
+
+        .heading {
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+
+        .text {
+          font-size: 15px;
+          color: #6e6e6e;
+          line-height: 1.5;
+        }
+
+        .user-rating {
+          gap: 10px;
+          margin-top: 10px;
+          margin-bottom: 15px;
+
+          .star {
+            font-size: 25px;
+            gap: 5px;
+          }
+        }
+        form {
+          max-width: 500px;
+          width: 100%;
+
+          input,
+          label {
+            display: block;
+          }
+
+          label {
+            font-size: 17px;
+            color: #3d3d3d;
+          }
+
+          textarea {
+            resize: vertical;
+            padding-top: 1rem;
+            height: 100px;
+            font-size: 16px;
+          }
+
+          input {
+            height: 40px;
+            margin-bottom: 10px;
+            font-size: 16px;
+          }
+
+          input:focus,
+          textarea:focus {
+            outline: none;
+            border: 1.5px solid #296dbb;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            border: 1px solid gray;
+            padding-left: 1rem;
+            margin-top: 10px;
+            margin-bottom: 18px;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+          }
+
+          button {
+            background-color: var(--black-color);
+            color: white;
+            outline: none;
+            border: none;
+            padding: 10px 35px;
+            font-size: 18px;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            cursor: pointer;
+            text-transform: uppercase;
+
+            &:hover {
+              background-color: #1d1d1d;
+            }
+          }
+        }
+      }
+    }
+  }
+}

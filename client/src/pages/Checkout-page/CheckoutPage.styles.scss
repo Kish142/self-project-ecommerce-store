@@ -1,0 +1,48 @@
+.checkout-page {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem !important;
+
+  .page-title {
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    font-size: 23px;
+    color: var(--black-color);
+    margin-bottom: 1.5rem;
+  }
+
+  .billing-details,
+  .order-summary {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .order-summary {
+    margin-top: 2rem;
+  }
+
+  @media screen and (min-width: 640px) {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    .billing-order-summary {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+
+      .billing-details {
+        flex-basis: 60%;
+      }
+
+      .order-summary {
+        flex-basis: 40%;
+        position: sticky;
+        top: 2rem;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.checkout-page .billing-details {
+  margin-top: 1rem;
+
+  .billing-details-wrapper {
+    margin: 0 1rem;
+
+    form {
+      margin-top: 1rem;
+
+      label {
+        font-size: 18px;
+        color: #3b3b3b;
+      }
+
+      textarea {
+        font-size: 14px;
+      }
+
+      input,
+      select,
+      textarea {
+        display: block;
+        width: 100%;
+      }
+
+      select {
+        background-color: transparent;
+        padding-left: 0.5rem;
+      }
+
+      input,
+      select {
+        height: 40px;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border: 1.5px solid #296dbb;
+      }
+
+      input {
+        padding-left: 1rem;
+      }
+
+      
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid gray;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+      }
+
+      textarea {
+        resize: vertical;
+        height: 150px;
+        padding: 0.5rem 0 0 1rem;
+        margin-bottom: 0;
+      }
+
+      .additonal-info {
+        margin-top: 15px;
+        h3 {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

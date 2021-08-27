@@ -1,0 +1,42 @@
+.product-page {
+  overflow-x: unset;
+  margin-bottom: 4rem;
+
+  .review-section {
+    margin-bottom: 2rem;
+    .title {
+      margin-top: 1rem;
+      font-size: 27px;
+      font-weight: 700;
+      border-bottom: 1px solid #999999;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+    @media screen and (min-width: 768px) {
+      max-width: 1200px;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .review-section .review-rating {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      .reviews-ratings {
+        flex-basis: 40%;
+        position: sticky;
+        top: 1rem;
+        height: 100%;
+      }
+
+      .user-reviews {
+        flex-basis: 70%;
+      }
+    }
+  }
+}
