@@ -13,6 +13,12 @@ const auth = require('./routes/auth');
 
 const app = express();
 
+if (process.env.NODE_ENV === 'production') {
+  console.log = () => {};
+  console.error = () => {};
+  console.debug = () => {};
+}
+
 // Load env
 dotenv.config();
 

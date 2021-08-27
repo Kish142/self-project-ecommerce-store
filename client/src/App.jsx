@@ -7,21 +7,34 @@ import './App.scss';
 import Footer from './components/Footer/Index';
 import Header from './components/Navigation/Navigation';
 import HomePage from './pages/Home-page/HomePage';
-import ShopPage from './pages/Shop-page/ShopPage';
-import ProductPage from './pages/Product-page/ProductPage';
-import CartPage from './pages/Cart-page/CartPage';
-import CheckoutPage from './pages/Checkout-page/CheckoutPage';
-import AdminPage from './pages/Admin-page/AdminPage';
 import { useHttpClient } from './custom-hook/httpclient';
 
 import { getAllProduct } from './redux/product/product.action';
 import LoadingSpinner from './components/Loading-spinner/LoadingSpinner';
 import { selectCurrentUser } from './redux/user/user.selector';
 import { setCurrentUser } from './redux/user/user.action';
-import PageNotFound from './components/404-page/PageNotFound';
+
+const ShopPage = React.lazy(() => import('./pages/Shop-page/ShopPage'));
+const ProductPage = React.lazy(() =>
+  import('./pages/Product-page/ProductPage')
+);
+const CartPage = React.lazy(() => import('./pages/Cart-page/CartPage'));
+const CheckoutPage = React.lazy(() =>
+  import('./pages/Checkout-page/CheckoutPage')
+);
+const AdminPage = React.lazy(() => import('./pages/Admin-page/AdminPage'));
+const PageNotFound = React.lazy(() =>
+  import('./components/404-page/PageNotFound')
+);
 
 function App({ product, currentUser, setCurrentUser }) {
   const { isLoading, sendRequest } = useHttpClient();
+
+  if (process.env.NODE_ENV === 'production') {
+    console.log = () => {};
+    console.error = () => {};
+    console.debug = () => {};
+  }
 
   useEffect(() => {
     const fetchRequest = async () => {
@@ -56,27 +69,29 @@ function App({ product, currentUser, setCurrentUser }) {
       {isLoading && <LoadingSpinner />}
 
       <Header />
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/shop-page' component={ShopPage} />
-        <Route exact path='/product/:id' component={ProductPage} />
-        <Route exact path='/cart' component={CartPage} />
-        <Route exact path='/checkout' component={CheckoutPage} />
-        <Route
-          exact
-          path='/admin-dashboard'
-          render={() =>
-            !!currentUser === true &&
-            currentUser.user &&
-            currentUser.user.role === 'admin' ? (
-              <AdminPage />
-            ) : (
-              <Redirect to='/' />
-            )
-          }
-        />
-        <Route exact path='*' component={PageNotFound} />
-      </Switch>
+      <React.Suspense fallback={<LoadingSpinner />}>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/shop-page' component={ShopPage} />
+          <Route exact path='/product/:id' component={ProductPage} />
+          <Route exact path='/cart' component={CartPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
+          <Route
+            exact
+            path='/admin-dashboard'
+            render={() =>
+              !!currentUser === true &&
+              currentUser.user &&
+              currentUser.user.role === 'admin' ? (
+                <AdminPage />
+              ) : (
+                <Redirect to='/' />
+              )
+            }
+          />
+          <Route component={PageNotFound} />
+        </Switch>
+      </React.Suspense>
       <Footer />
     </div>
   );

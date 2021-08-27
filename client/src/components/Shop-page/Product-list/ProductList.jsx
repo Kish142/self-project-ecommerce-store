@@ -12,6 +12,22 @@ import { connect } from 'react-redux';
 import { selectProductItems } from '../../../redux/product/product.selector';
 
 const ProductList = ({ addCart, productList }) => {
+  const atc = (product) => {
+    addCart(product);
+
+    const userMessage = document.querySelector('.user-message-cart');
+
+    if (userMessage) {
+      userMessage.style.display = 'block';
+    }
+
+    setTimeout(() => {
+      if (userMessage) {
+        userMessage.style.display = 'none';
+      }
+    }, 2000);
+  };
+
   return (
     <section className='product-list'>
       <div className='user-message-cart'>
@@ -36,18 +52,21 @@ const ProductList = ({ addCart, productList }) => {
                 </Link>
                 <div className='hover-btn-atc'>
                   <button
-                    onClick={() => {
-                      addCart(product);
-                      document.querySelector(
-                        '.user-message-cart'
-                      ).style.display = 'block';
+                    onClick={
+                      () => atc(product)
+                      //   {
+                      //   addCart(product);
+                      //   document.querySelector(
+                      //     '.user-message-cart'
+                      //   ).style.display = 'block';
 
-                      setTimeout(() => {
-                        document.querySelector(
-                          '.user-message-cart'
-                        ).style.display = 'none';
-                      }, 2000);
-                    }}
+                      //   setTimeout(() => {
+                      //     document.querySelector(
+                      //       '.user-message-cart'
+                      //     ).style.display = 'none';
+                      //   }, 2000);
+                      // }
+                    }
                     className='hover-atc'>
                     <span>
                       <FiShoppingBag />
